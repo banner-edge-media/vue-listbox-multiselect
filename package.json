@@ -1,7 +1,7 @@
 {
-  "name": "vue-listbox-multiselect",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@banneredge/vue-listbox-multiselect",
+  "version": "0.0.2",
+  "description": "Dual list-box multi-select dropdown for enterprise applications.",
   "main": "dist/vue-listbox-multiselect.ssr.js",
   "browser": "dist/vue-listbox-multiselect.esm.js",
   "module": "dist/vue-listbox-multiselect.esm.js",
@@ -17,7 +17,8 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "publish": "npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -45,5 +46,18 @@
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "dependencies": {
+    "vuetify": "^2.3.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banner-edge-media/vue-listbox-multiselect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banner-edge-media/vue-listbox-multiselect/issues"
+  },
+  "homepage": "https://github.com/banner-edge-media/vue-listbox-multiselect#readme"
 }
