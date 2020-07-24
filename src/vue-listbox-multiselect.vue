@@ -3,7 +3,7 @@
     <v-menu offset-y
             :close-on-content-click="false"
             style="max-width: unset !important;"
-            content-class="listBox-multi-select-menu"
+            :content-class="contentClass"
     >
       <template v-slot:activator="{ on, attrs }">
         <div
@@ -29,8 +29,9 @@
               v-model="query"
               hide-details
               value=""
+              v-if="!hideSearch"
       ></v-text-field>
-      <div class="d-flex justify-start listBox-multi-select container">
+      <div class="d-flex justify-start container">
         <div>
           <div class="label">Available</div>
           <v-list class="panel">
@@ -39,7 +40,7 @@
                     :key="item.id"
                     :disabled="item.isGroup"
                     v-bind:class="{ active: item.selected, group: item.isGroup, subItem: item.isSubItem}"
-                    v-on="item.isGroup ? { click: ($event) => $event.preventDefault() } : { click: ($event) => clickedUnselected(item.id, $event) }"
+                    @click="clickedUnselected(item.id, $event)"
             >
               <v-list-item-title>{{item.value}}</v-list-item-title>
             </v-list-item>
@@ -76,7 +77,7 @@
 
   const Component = Vue.extend({
     name: 'Dashboard',
-    props: ['value', 'searchFunction', 'placeholder'],
+    props: ['value', 'searchFunction', 'placeholder', 'size', 'hideSearch'],
     components: { VBtn, VList, VMenu, VListItem, VListItemTitle, VTextField, VProgressCircular, VIcon },
     data() {
       return {
@@ -304,6 +305,22 @@
       },
     },
     computed: {
+      contentClass() {
+        let contentClass = 'listBox-multi-select-menu';
+        switch(this.size) {
+          case 'medium':
+            contentClass += ' medium';
+            break;
+          case 'large':
+            contentClass += ' large';
+            break;
+          case 'x-large':
+            contentClass += ' x-large';
+            break;
+        }
+
+        return contentClass;
+      },
       dropDownText() {
         const a = this.selected as any[];
         if (a.length === 1) {
@@ -311,7 +328,7 @@
         }
 
         if (a.length > 1) {
-          return `${a.length} selected`;
+          return `${a.filter((x) => !x.isGroup).length} selected`;
         }
 
         return this.placeholder || 'None';
@@ -326,18 +343,17 @@
   .listBox-multi-select-menu {
     max-width: 366px !important;
     min-width: 366px !important;
-    height: 288px !important;
     background-color: white !important;
   }
 
-  .listBox-multi-select.container {
+  .listBox-multi-select-menu.container {
     background-color: white;
   }
 
-  .listBox-multi-select .label {
+  .listBox-multi-select-menu .label {
     font-size:13px;
   }
-  .listBox-multi-select .panel {
+  .listBox-multi-select-menu .panel {
     border: 1px solid #ccc !important;
     border-radius: 4px;
     width: 155px !important;
@@ -347,39 +363,39 @@
     overflow-x: scroll;
   }
 
-  .listBox-multi-select .panel::-webkit-scrollbar {
+  .listBox-multi-select-menu .panel::-webkit-scrollbar {
     width: 5px;
   }
-  .listBox-multi-select .panel::-webkit-scrollbar-thumb {
+  .listBox-multi-select-menu .panel::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 10px;
   }
 
-  .listBox-multi-select .panel .v-list-item {
+  .listBox-multi-select-menu .panel .v-list-item {
     min-height:25px;
     padding: 0 5px;
     float: left;
     min-width: 100%;
   }
 
-  .listBox-multi-select .panel .v-list-item__title {
+  .listBox-multi-select-menu .panel .v-list-item__title {
     overflow: unset;
     font-size:13px;
   }
 
-  .listBox-multi-select .panel .v-list-item.group {
+  .listBox-multi-select-menu .panel .v-list-item.group {
     font-weight:bold;
   }
 
-  .listBox-multi-select .panel .v-list-item.subItem {
+  .listBox-multi-select-menu .panel .v-list-item.subItem {
     padding-left: 10px;
   }
 
-  .listBox-multi-select .panel .v-list-item.active {
+  .listBox-multi-select-menu .panel .v-list-item.active {
     background-color: #1976d2 !important;
     color: white !important;
   }
-  .listBox-multi-select .panel .v-list-item.active .v-list-item__title {
+  .listBox-multi-select-menu .panel .v-list-item.active .v-list-item__title {
     color: white !important;
   }
 
@@ -451,35 +467,41 @@
   }
 
   @media screen and (min-width: 500px) {
-    .listBox-multi-select-menu {
+    .listBox-multi-select-menu.medium,
+    .listBox-multi-select-menu.large,
+    .listBox-multi-select-menu.x-large {
       max-width: 486px !important;
       min-width: 486px !important;
     }
 
-    .listBox-multi-select .panel {
+    .listBox-multi-select-menu.medium .panel,
+    .listBox-multi-select-menu.large .panel,
+    .listBox-multi-select-menu.x-large .panel {
       width: 215px !important;
     }
   }
 
   @media screen and (min-width: 700px) {
-    .listBox-multi-select-menu {
+    .listBox-multi-select-menu.large,
+    .listBox-multi-select-menu.x-large {
       max-width: 666px !important;
       min-width: 666px !important;
     }
 
-    .listBox-multi-select .panel {
+    .listBox-multi-select-menu.large .panel,
+    .listBox-multi-select-menu.x-large .panel {
       width: 305px !important;
     }
   }
 
   @media screen and (min-width: 900px) {
-    .listBox-multi-select-menu {
-      max-width: 716px !important;
-      min-width: 716px !important;
+    .listBox-multi-select-menu.x-large {
+      max-width: 816px !important;
+      min-width: 816px !important;
     }
 
-    .listBox-multi-select .panel {
-      width: 330px !important;
+    .listBox-multi-select-menu.x-large .panel {
+      width: 380px !important;
     }
   }
 </style>

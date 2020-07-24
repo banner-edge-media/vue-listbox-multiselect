@@ -46,6 +46,8 @@ export default Vue.extend({
         :search-function="search"
         placeholder="Search Items"
         style="width: 300px; margin: 20px auto"
+        size="medium"
+        :hide-search="false"
     />
   </v-app>
 </template>

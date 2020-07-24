@@ -1,6 +1,6 @@
 {
   "name": "@banneredge/vue-listbox-multiselect",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Vue Dual list-box multi-select drop-down component for enterprise applications.",
   "main": "dist/vue-listbox-multiselect.ssr.js",
   "browser": "dist/vue-listbox-multiselect.esm.js",

@@ -6,7 +6,7 @@
     <a href="https://github.com/banner-edge-media/vue-listbox-multiselect/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@banneredge/vue-listbox-multiselect.svg" alt="License"></a>
 </p>
 
-![Preview](preview.png)
+![Preview](preview.png?)
 
 ## Demo/Docs
 
@@ -73,6 +73,8 @@ export default Vue.extend({
         :search-function="search"
         placeholder="Search Items"
         style="width: 300px; margin: 20px auto"
+        size="medium"
+        :hide-search="false"
     />
   </v-app>
 </template>
@@ -96,10 +98,10 @@ export default Vue.extend({
     * We should establish what we support.
 * Remove Vuetify dependency
     * Vuetify provides some very cool pre-made components, but we want this to be usable with any library.
-* Figure out a smart way to do widths.
-    * Sometimes if we have a large monitor and long item names, we want to stretch it very wide. If the item names are not long it does not look good.
-* Add a prop to Hide Search (May want to keep it for all use-cases?)
-    * Sometimes we want to use this with a very small list and don't need the search box.
+* ~~Figure out a smart way to do widths.~~
+    * ~~Sometimes if we have a large monitor and long item names, we want to stretch it very wide. If the item names are not long it does not look good.~~
+* ~~Add a prop to Hide Search (May want to keep it for all use-cases?)~~
+    * ~~Sometimes we want to use this with a very small list and don't need the search box.~~
 * Add test coverage?
 * Add a way to reset it to original state dynamically
     * Reset selected list
