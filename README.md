@@ -108,8 +108,9 @@ export default Vue.extend({
 * Add slots to make it fully customizable
 * Add more input interactions
     * Currently Supported:
-        * Click
-        * Ctrl-Click
+        * Click (Select)
+        * Ctrl-Click (Select Multiple)
+        * Double-Click (Move Item)
     * Needed:
         * Shift-Click
         * Ctrl-A ?
