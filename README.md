@@ -84,6 +84,55 @@ export default Vue.extend({
 * There is no direct way to pass in the items, everything must go through the async search function. The function will get called with a blank query on load.
 * You must implement your own limit, filtering and excluding selected items (See examples). This is set up because we assume most use-cases will be calling the server for data and that will need to be handled on the server.
 * There is lots of room for improvement, so please check out the Roadmap and contribute!
+* Current recommendation is to pull 100 results with each query. Users do not need to scroll through more, they can just search to get what they need.
+
+## Props
+<table>
+<tr>
+<th>Prop</th>
+<th>Description</th>
+</tr>
+<tr>
+    <td>
+    v-model
+    </td>
+    <td>
+    Model to bind output to. You can set it initially to pre-select items. Note: you will need to exclude selected items from each query. Type: {id: string, value: string, group?: string}. The component will NOT watch for changes on the model and re-fresh the list.
+    </td>
+</tr>
+<tr>
+    <td>
+    :search-function
+    </td>
+    <td>
+    Function that will get called when the component needs data. It should be async or return a Promise. A string query will be passed in as the only parameter. While the promise is not fulfilled, a loading indicator will show.
+    </td>
+</tr>
+<tr>
+    <td>
+    placeholder
+    </td>
+    <td>
+    Text to show in the select field when no items are selected. Defaults to 'None' 
+    </td>
+</tr>
+<tr>
+    <td>
+    size
+    </td>
+    <td>
+    How wide to expand the menu. Options are, null, medium, large, x-large. They will fall back on a size that fits. Default size is 366px wide, it will look good in most modern mobile devices.
+    </td>
+</tr>
+<tr>
+    <td>
+    hide-search
+    </td>
+    <td>
+    Hides the search bar. Search is on by default. If you have a small list and still want to use this component, you have the option to turn it off. You can also turn it off dynamically if items < 10 for example.
+    </td>
+</tr>
+</table>
 
 ## Roadmap:
 * Add demo and documentation static site.
