@@ -1,4 +1,6 @@
-# @banneredge/vue-listbox-multiselect
+#  Vue Dual Listbox MultiSelect Dropdown Component
+## @banneredge/vue-listbox-multiselect
+
 ![Preview](preview.png)
 
 ## Demo/Docs
