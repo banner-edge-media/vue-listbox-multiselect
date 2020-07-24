@@ -72,10 +72,12 @@
 
 <script lang="ts">
   import Vue from 'vue';
+  import { VBtn, VIcon, VList, VListItem, VListItemTitle, VMenu, VProgressCircular, VTextField } from 'vuetify/lib';
 
   const Component = Vue.extend({
     name: 'Dashboard',
     props: ['value', 'searchFunction', 'placeholder'],
+    components: { VBtn, VList, VMenu, VListItem, VListItemTitle, VTextField, VProgressCircular, VIcon },
     data() {
       return {
         list: [] as any[],
