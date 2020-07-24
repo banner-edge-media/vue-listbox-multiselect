@@ -1,15 +1,15 @@
 # @banneredge/vue-listbox-multiselect
 ![Preview](preview.png)
 
-##Demo/Docs
+## Demo/Docs
 
 Coming soon... Check out /dev folder for a working sandbox.
 
-##Motivation
+## Motivation
 
 There are several good multi-select components available for Vue. However, none are suitable for enterprise app development. In a typical enterprise app, you are often challenged offering a simple drop-down which allows the user to filter through thousands of categorized items from the server, and allows the user to select hundreds. At Banner Edge Media, we have been using a similar component for multiple years. As we migrate to Vue, we wanted to share this component with the Vue community, and together make it even better.  
 
-##Setup
+## Setup
 Install:
 ```bash
 # NPM
@@ -70,13 +70,13 @@ export default Vue.extend({
   </v-app>
 </template>
 ```
-##Notes:
+## Notes:
 * The current version is heavily dependent on Vuetify with mdi icons for the arrows
 * There is no direct way to pass in the items, everything must go through the async search function. The function will get called with a blank query on load.
 * You must implement your own limit, filtering and excluding selected items (See examples). This is set up because we assume most use-cases will be calling the server for data and that will need to be handled on the server.
 * There is lots of room for improvement, so please check out the Roadmap and contribute!
 
-##Roadmap:
+## Roadmap:
 * Add demo and documentation static site.
 * Clean up the code a bit and add comments.
 * Add interfaces for parameters
@@ -108,4 +108,3 @@ export default Vue.extend({
         * Ctrl-A ?
         * Move with arrow keys?
         * Shift-arrow keys?
-    
