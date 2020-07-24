@@ -52,7 +52,7 @@
     "url": "git+https://github.com/banner-edge-media/vue-listbox-multiselect.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/banner-edge-media/vue-listbox-multiselect/issues"
   },

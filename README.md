@@ -1,5 +1,10 @@
 #  Vue Dual Listbox MultiSelect Dropdown Component
 ## @banneredge/vue-listbox-multiselect
+<p align="center">
+    <a href="https://www.npmjs.com/package/@banneredge/vue-listbox-multiselect"><img src="https://img.shields.io/npm/dt/@banneredge/vue-listbox-multiselect.svg" alt="Total Downloads"></a>
+    <a href="https://www.npmjs.com/package/@banneredge/vue-listbox-multiselect"><img src="https://img.shields.io/npm/v/@banneredge/vue-listbox-multiselect.svg" alt="Latest Release"></a>
+    <a href="https://github.com/banner-edge-media/vue-listbox-multiselect/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@banneredge/vue-listbox-multiselect.svg" alt="License"></a>
+</p>
 
 ![Preview](preview.png)
 
