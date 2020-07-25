@@ -4,7 +4,7 @@ import VueListboxMultiselect from '@banneredge/vue-listbox-multiselect';
 import dataSet from './usCities';
 
 export default Vue.extend({
-  name: 'Categories',
+  name: 'Groups',
   components: {
     VueListboxMultiselect,
   },
@@ -38,11 +38,20 @@ export default Vue.extend({
 </script>
 
 <template>
+  <div>
+    <h2 id="groups">With Groups</h2>
+    <ul>
+      <li>Two-levels</li>
+      <li>Medium Size</li>
+      <li><a href="https://github.com/banner-edge-media/vue-listbox-multiselect/blob/master/demo/src/components/Groups.vue"
+             target="_blank">View Code</a></li>
+    </ul>
+    <br/>
   <vue-listbox-multiselect
     v-model="selectedList"
     :search-function="search"
     placeholder="Search Cities"
     size="medium"
-    :hide-search="false"
   />
+  </div>
 </template>

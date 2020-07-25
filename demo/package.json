@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "sync": "aws s3 sync ./dist s3://vue-listbox-multiselect"
+    "sync": "npm run build && aws s3 sync ./dist s3://vue-listbox-multiselect"
   },
   "dependencies": {
     "@banneredge/vue-listbox-multiselect": "^0.1.1",
