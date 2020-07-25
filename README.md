@@ -8,19 +8,25 @@
 
 ![Preview](preview.png?)
 
-## Demo/Docs
+## Demo 
 
-Coming soon... Check out /dev folder for a working sandbox.
+http://vue-listbox-multiselect.s3-website-us-west-2.amazonaws.com
 
 ## Motivation
 
 There are several good multi-select components available for Vue. However, none are suitable for enterprise app development. In a typical enterprise app, you are often challenged offering a simple drop-down which allows the user to filter through thousands of categorized items from the server, and allows the user to select hundreds. At Banner Edge Media, we have been using a similar component for multiple years. As we migrate to Vue, we wanted to share this component with the Vue community, and together make it even better.  
 
 ## Setup
+
+Note: This component assumes you have Vuetify installed. If you are starting a new project and want to use Vuetify, please follow their set-up guide: https://vuetifyjs.com/en/getting-started/quick-start/
+
 Install:
 ```bash
 # NPM
 npm install @banneredge/vue-listbox-multiselect
+
+# CDN
+<script src='https://unpkg.com/@banneredge/vue-listbox-multiselect'></script>
 ```
 
 Usage:
@@ -134,8 +140,8 @@ export default Vue.extend({
 </tr>
 </table>
 
-## Roadmap:
-* Add demo and documentation static site.
+## Roadmap
+* ~~Add demo static site.~~
 * Clean up the code a bit and add comments.
 * Add interfaces for parameters
     * We should add a few more features before making contracts
