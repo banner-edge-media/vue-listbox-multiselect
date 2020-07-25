@@ -42,11 +42,11 @@
           <br/>
           Currently only works with <a href="https://vuetifyjs.com/en/getting-started/quick-start/" target="_blank">Vuetify</a>.<br/>
           <br/>
-          <Basic style="max-width:400px" />
+          <Basic style="max-width:500px" />
           <br/>
-          <Groups style="max-width:400px" />
+          <Groups style="max-width:500px" />
           <br/>
-          <NoSearch style="max-width:400px" />
+          <NoSearch style="max-width:500px" />
         </v-container>
       </v-main>
     </v-app>
@@ -70,3 +70,13 @@ import Basic from '@/components/Basic.vue';
 })
 export default class App extends Vue {}
 </script>
+
+<style>
+  .model {
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+    max-height: 100px;
+    text-overflow: ellipsis;
+  }
+</style>

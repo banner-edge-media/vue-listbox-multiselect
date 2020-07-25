@@ -10,7 +10,10 @@ export default Vue.extend({
   },
   data() {
     return {
-      selectedList: [] as any[],
+      selectedList: [
+        { id: 'Alabama-Alabaster', value: 'Alabaster', group: 'Alabama' },
+        { id: 'California-Agoura Hills', value: 'Agoura Hills', group: 'California' },
+      ],
     };
   },
   methods: {
@@ -43,9 +46,12 @@ export default Vue.extend({
     <ul>
       <li>Two-levels</li>
       <li>Medium Size</li>
+      <li>Initialize Selected List</li>
       <li><a href="https://github.com/banner-edge-media/vue-listbox-multiselect/blob/master/demo/src/components/Groups.vue"
              target="_blank">View Code</a></li>
     </ul>
+    <br/>
+    <div class="model">Model: {{selectedList}}</div>
     <br/>
   <vue-listbox-multiselect
     v-model="selectedList"

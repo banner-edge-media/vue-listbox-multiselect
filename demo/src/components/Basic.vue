@@ -43,6 +43,8 @@ export default Vue.extend({
              target="_blank">View Code</a></li>
     </ul>
     <br/>
+    <div class="model">Model: {{selectedList}}</div>
+    <br/>
   <vue-listbox-multiselect
     v-model="selectedList"
     :search-function="search"
