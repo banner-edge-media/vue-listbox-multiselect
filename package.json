@@ -1,6 +1,6 @@
 {
   "name": "@banneredge/vue-listbox-multiselect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue Dual list-box multi-select drop-down component for enterprise applications.",
   "main": "dist/vue-listbox-multiselect.ssr.js",
   "browser": "dist/vue-listbox-multiselect.esm.js",
@@ -17,7 +17,8 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "publish-public": "npm run build && npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
